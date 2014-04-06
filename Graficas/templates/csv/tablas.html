@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{%block title %} Grafica de archivo Csv {% endblock %}
+{% block js %}
+<script type="text/javascript" src="../../../media/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="../../../media/js/mostrar.js"></script>
+<script type="text/javascript" src="../../../media/js/js/highcharts.js"></script>
+<script type="text/javascript" src="../../../media/js/js/themes/grid.js"></script>
+<script type="text/javascript" src="../../../media/js/js/modules/exporting.js"></script>
+<script type="text/javascript" src="../../../media/js/m.js"></script>
+<script type="text/javascript">
+ var b;
+            var chart;
+			var t=[];
+			var y=[]
+			var t2=[];
+			var a=0;
+			var z=0;
+			var total3=[];
+		 	var total=[];
+			var total2=[];
+            $(document).ready(iniciar);
+function iniciar()
+{		
+	$("table#1").hide();
+	$("table#1 tr:first").css("font-weight","bold");
+	$("div#0").css("cursor","pointer");
+	$("table#1 tr:last").css("font-weight","bold");
+	$("table#1 tr:even").css("background-color","#CEEFFF");
+	$("div#0").click(function()
+	{	if($("table#1").is (':hidden')){
+		$("table#1").toggle("slow");
+		$("div#0 h1").text("Presiona para ocultar la tabla");}
+		else{
+		$("table#1").toggle("slow");
+		$("div#0 h1").text("Presiona para ver la tabla");
+		}
+	});
+	
+	
+	function remplazar (texto, buscar, nuevo){
+    var temp = '';
+    var long = texto.length;
+    for (j=0; j<long; j++) {
+        if (texto[j] == buscar)
+        {
+            temp += nuevo;
+        } else
+            temp += texto[j];
+    }
+    return temp;
+}
+		
+		a=$("#a").text();
+		z=($("#b").text());
+		$("#b").hide();
+		$("#a").hide();
+		
+		var buscar=",";
+		var nuevo="."
+	a=remplazar(a,buscar,nuevo);
+	z=remplazar(z,buscar,nuevo);
+		a=parseFloat(a);
+		z=parseFloat(z);
+		
+					$("td#Periodo").each(function(i,valor) {
+                      total[i]=parseFloat($(this).text());
+                   });	
+				   
+				   $("td#y").each(function(i,valor) {
+                      total3[i]=parseFloat($(this).text());
+                   });
+				  
+				$.each(total,function(i){
+					 t[i]=[total[i],total3[i]];
+					 w=z*total[i];
+					 y=a+w;
+					 t2[i]=[total[i],y];
+					 });
+				   x=total[2];
+	
+                chart = new Highcharts.Chart({
+                    chart: {renderTo: 'container',},
+                    title: {text: 'FINANZAS'},
+                    xAxis: {title:{ text: 'PERIODO'} },  
+        			yAxis: {
+						title:{text:'PRECIO AJT'}},  
+               series: [{
+		pointInterval:  1,  
+      pointStart: total[0], 
+            data: t2
+         }, { 
+      pointInterval:  1,  
+      pointStart: total[0],  
+      data:t
+    }]  
+  }); 
+}
+				
+</script>
+{% endblock %}
+{% block css %}
+<link href="../../../media/css/style1.css"  rel="stylesheet" type="text/css" />
+<link href="../../../media/css/estilos.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block imagenCab %}
+<div id="cabecera">
+  <img src="../../../media/images/djangopony2.png" />
+</div>
+{% endblock %}
+{% block content %}
+<div id="subtitulo">VISTA DE GRÁFICA </div>
+<br/>
+{% if registro|length > 0 %}
+<div id="container" style="width: 700px; height: 350px; margin: 0 auto"></div>
+
+<div id="0">
+<h1>Presiona para ver la tabla</h1>
+</div>
+<center>
+<table id="1" width="200" border="1" align="center">
+  <tr id="titulo" >
+    <th id="x" scope="col">Periodo</th>
+    <th scope="col">Fecha</th>
+    <th scope="col">PrecioAjt</th>
+    <th scope="col">XY</th>
+    <th scope="col">x<sup>2</sup></th>
+    <th scope="col">Numero de archivo</th>
+  </tr>
+  {% for l in registro %}
+  {% if l.periodo > limite %} 
+  <tr>
+     <td id="Periodo">{{l.periodo}}</td>
+    <td id="fecha">{{ l.fecha }}</td>
+    <td id="y" >{{ l.precioAjt }}</td>
+    <td>{{ l.xy }}</td>
+    <td>{{ l.xCuadrado }}</td>
+    <td>{{ l.archivo_id }}  </td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+
+</table>
+</center>
+<div id="a">
+{{ a }}
+</div>
+<div id="b">
+{{ b }}
+</div>
+{% endif %}
+
+{% endblock %}
+

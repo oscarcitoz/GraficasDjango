@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Respuesta {% endblock %}
+
+{% block css %}
+<link href="../../media/css/style1.css"  rel="stylesheet" type="text/css" />
+<link href="../../media/css/estilos.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block imagenCab %}
+<div id="cabecera">
+  <img src="../../media/images/djangopony2.png" />
+</div>
+{% endblock %}
+
+{% block content %}
+
+<pre>
+<h3>{{ informacion }}</h3>
+</pre>
+{% endblock %}

@@ -1,0 +1,365 @@
+/* ------------------------------------------------------------------------
+	Template Name : CoolBlue
+	Template Code : S-0031
+	Version : 1.1
+	Author : Erwin Aligam
+	Author URI : http://www.styleshout.com/
+	Last Date Modified : December 13, 2012
+ -------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+    R E S E T
+----------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----------------------------------------------------------------------------
+    G E N E R A L
+----------------------------------------------------------------------------- */
+html {
+    overflow-y: scroll;
+}
+body {
+	font: 15px/24px Georgia, Serif;
+	color: #454545;
+   	background: url(../images/bg.png);
+}
+/* Links */
+a:link, a:visited {
+	text-decoration: none;
+	color:#093;
+    outline: 0;
+}
+a:hover, a:focus, a:active {
+  color:#000;
+  }
+
+
+
+
+/* Headers */
+h1, h2, h3, h4 {
+	font: bold 1em/1.5em Arial, Helvetica, Sans-Serif;
+   	margin-bottom: 24px;
+    color: #353535;
+}
+h1 {
+    font-size: 38px;
+    line-height: 42px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    letter-spacing: -2px;
+}
+h2 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+h3 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+h4 { font-size: 18px; }
+
+/* Lists */
+ul, ol {
+	margin: 0 0 24px 0;
+	padding: 0 20px;
+}
+ul { list-style: disc; }
+ol { list-style: decimal; }
+
+dt {
+    font-weight: bold;
+    color: #1980AF;
+}
+dd {
+    padding-left: 20px;
+}
+
+p, dl { margin: 0 0 24px 0; }
+
+blockquote {
+  	margin: 12px 0;
+  	padding: 40px 30px 20px 70px;
+  	border: 1px solid #E4E6E9;
+	background: #F3F4F5 url(../images/quote.png) no-repeat 20px 32px;
+  	font-size: 18px;
+  	line-height: 28px;
+  	font-style: italic;
+  	font-family: Georgia, 'Times New Roman', Times, Serif;
+  	color: #555;
+    overflow: hidden;
+}
+blockquote .author {
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-align: right;
+    font-size: 12px;
+}
+code {
+    font-family: Consolas, 'Lucida Console', Monaco, Monospace;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    margin: 0 0 24px 0;
+  	padding: 0 25px;
+  	display: block;
+    clear: both;
+  	border: 1px solid #E4E6E9;
+	background: #F3F4F5;
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+mark {
+    background-color: #FDD2B3;
+}
+strong, b {
+    font-weight: bold;
+}
+.no-border {
+    border: none;
+}
+
+/* Images */
+
+table {
+	border-collapse: collapse;
+	margin: 12px 0 24px 0;
+}
+tr { background: #FFF; }
+th, td {
+	text-align: left;			
+	border-width: 1px;
+  	border-style: solid;
+}
+th {
+  	padding: .8em 1em;
+	background: #2C76A6;
+  	border-color: #308ABA #308ABA #246F97 #308ABA;
+	color: #fff;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 16px;
+	font-weight: bold;
+}
+td {
+	border-color: #E9E9E9;
+	padding: .7em 1em;
+}
+
+/* Form */
+form {
+    width: 500px;
+    margin: 24px 0 24px 0;
+    padding: 32px 40px;
+    background: #E9EAEB;
+    border: 1px solid #DFE1E6;
+
+}
+input, select {
+    vertical-align: middle;
+}
+form div {
+	border-bottom: 1px solid #D8DAE0;
+	padding: 12px 0 5px 0;	margin: 0;
+	color: #2C76A6;
+}
+form p {
+	color: #1980AF;
+}
+form label {
+    display: block;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 13px;
+    margin: 0 0 5px 0;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+    color:#666666;
+}
+form label span {
+    color: #1980AF;
+}
+form input,
+form select,
+form textarea {
+    margin-bottom: 24px;
+	padding: 9px 10px;
+    color: #999;
+    background: #fff;
+	border-width: 1px;
+	border-style: solid;
+  	border-color: #DCDEE2 #E9EBED #E9EBED #DCDEE2;
+	font: 13px 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+}
+form textarea {
+    height: 325px;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+	background: #EEF5F9;
+    color: #666666;
+}
+
+/* --------------------------------------------------------------------------
+    S T R U C T U R E
+--------------------------------------------------------------------------- */
+
+header {
+    position: relative;
+    margin: 0 auto;
+    width: 978px;
+}
+
+footer {
+	clear: both;
+    width: 978px;
+	margin: 0 auto;
+    padding-top: 12px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    font-size: 11px;
+	color: #C2DBE7;
+    overflow: hidden;
+    background: url(../images/footer-line.png) repeat-x left top;
+}
+
+/* --------------------------------------------------------------------------
+    H E A D E R
+---------------------------------------------------------------------------- */
+
+/* Logo */
+header hgroup {
+    position: absolute;
+    background: url(../images/logo.png) no-repeat;
+    height: 62px;
+    width: 215px;
+    display: block;
+    top: 100px;
+    left: 10px;
+}
+header hgroup h1 {
+    margin: 0;
+    padding: 0;
+}
+header hgroup h1 a {
+    text-indent: -9999em;
+    display: block;
+    height: 48px;
+    width: 215px;
+}
+header hgroup h3  {
+    text-indent: -9999em;
+    height: 0;
+}
+
+/*  Main Navigation  */
+header nav {
+	position: absolute;
+	left: 0;
+    top: 0;
+   	width: 650px;
+    height: 60px;
+}
+header nav ul {
+	list-style: none;
+	margin: 0;
+    padding: 0;
+	height: 60px;
+}
+header nav ul li {
+    position: relative;
+	float: left;
+header nav ul a:link, header nav ul a:visited {
+}
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+	margin: 0;
+    padding: 0 11px;
+    height: 60px;
+	color: #BEBEBE;
+    text-shadow: 0 -1px 0 rgba(10, 10, 10, 1);
+    line-height: 68px;
+}
+header nav ul li a:hover,
+header nav ul li a:active {
+	border: none;
+	color: #D67630;
+}
+
+
+/* ----------------------------------------------------------------------------
+    F O O T E R
+----------------------------------------------------------------------------- */
+footer a:link,
+footer a:visited {
+    color: #fff;
+}
+footer a:hover {
+    color: #99CCFF;
+}
+
+aside {
+    position: relative;
+    width: 135px;
+    float: left;
+}
+
+
+

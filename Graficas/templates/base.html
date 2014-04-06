@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}titulo base{% endblock %}</title>
+{% block js %}
+<script type="text/javascript" src="../media/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="../media/js/m.js"></script>
+{% endblock %}
+{% block css %}
+<link href="../media/css/style1.css"  rel="stylesheet" type="text/css" />
+<link href="../media/css/estilos.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+</head>
+<body>
+<div id="contenedor">
+{% block imagenCab %}
+<div id="cabecera">
+  <img src="../media/images/djangopony2.png" />
+</div>
+{% endblock %} 
+<div id="barra_lateral">
+<nav>
+	<div id="menu">
+    <center>
+    <ul class="menu">
+    <li class="primer_nivel"><a href="{% url vista_principal %}" class="primer_nivel">   Inicio   </a></li>
+    <li class="primer_nivel"><br/>Cargar
+    <ul>
+    <li class="segundo_nivel"><a href="{% url vista_cargaCsv %}"> Archivos CSV </a></li>
+    <li class="segundo_nivel"><a href="{% url vista_cargaTxt %}">Archivos TXT</a></li>
+    </ul>
+     </li>
+     <li class="primer_nivel">Ver
+     <ul>
+     <li class="segundo_nivel"><a href="{% url vista_archivosCsv %}">  Archivos CSV </a></li>
+     <li class="segundo_nivel"> <a href="{% url vista_archivosTxt %}">Archivos TXT </a></li>
+     </ul>
+     </li>
+     </ul
+     ></center>
+ </div>
+</nav>
+
+</div>
+
+<div id="contenido">
+{% block content %}
+
+{% endblock %}
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Error {% endblock %}
+{% block content %}
+<div id="inicio">
+<center>
+<div id="subtitulo">ERROR</div></center>
+<br/>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No se pudo realizar la operación solicitada debido a:</p>
+<ul>
+<li>No existe el archivo seleccionado (Asegurece de haberlo copiado y cargado al servidor).</li>
+<li>Fallas con la conexion a la base de datos o servidor.</li>
+</ul>
+<pre>Si no consigue solucionar el problema consulte con su programador.</pre>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ 
+text-align:center;}
+
+#contenedor{
+	width:900px;
+	height:400px;
+	
+	}
+#cabecera{
+	background-image:url(../images/django.jpg);
+	padding:5px;
+	}
+
+#barra_lateral{
+	
+	background-color :#E1EFCF;
+	width:140px;
+	height:100%;
+	padding:10px;
+	float:left;
+	}
+	
+#contenido
+	{
+		background-color:#FFF;
+		float:left;
+		width:718px;
+		height:100%;
+		border-right:#F4F4F4 solid 1px;
+		padding:10px;
+		margin-left:1px;
+		}
+#inicio
+	{
+	text-align:left;	
+	}
+
+
+.primer_nivel,a.primer_nivel
+{
+	color:#696;
+}
+.segundo_nivel
+{
+	color:#093;
+	width:135px;
+	list-style-type: none;
+}
+
+.menu {
+	list-style-type: none;
+  width: 135px;
+  margin: 0; 
+  padding: 0;
+  border: 1px solid #F4F4F4;
+
+ 
+}
+ul.menu li {
+  border-bottom: 1px  dashed#390 ;
+  border-top: 1px solid #F4F4F4 ;
+  border-left:5px groove  #390;
+  background: #F4F4F4;
+}
+
+.primer_nivel:hover,a.primer_nivel:hover{
+	color:#093;
+	background-color:#CCC;	}
+	.segundo_nivel:hover{
+	color:#696;
+	background-color:#999;
+		}		
+		
+.primera_fila{
+	background-color:#093;
+	border-color:#390;
+	}
+#subtitulo{
+	color:#FFF;
+	font-weight:bold;
+	font-size: 20px;
+	letter-spacing: 0.2px;
+	height:25px;
+  	display: block;
+  	border: 1px solid #E4E6E9;
+	background-color:#3C6;
+	}	

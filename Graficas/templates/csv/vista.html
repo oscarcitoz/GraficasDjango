@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Vista del CSV cargado {% endblock %}
+{% block js %}
+<script type="text/javascript" src="../../media/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="../../media/js/m.js"></script>
+{% endblock %}
+{% block css %}
+<link href="../../media/css/style1.css"  rel="stylesheet" type="text/css" />
+<link href="../../media/css/estilos.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block imagenCab %}
+<div id="cabecera">
+  <img src="../../media/images/djangopony2.png" />
+</div>
+{% endblock %}
+{% block content %}
+<div id="subtitulo"> VISTA DEL ARCHIVO CSV </div>
+<br/>
+<center>
+{% if registro|length > 0 %}
+<table width="500" border="1" align="center">
+	<tr>
+		<th scope="col" class="primera_fila">Fecha</th>
+
+		<th scope="col" class="primera_fila">Open</th>
+		<th scope="col" class="primera_fila">High</th>
+		<th scope="col" class="primera_fila">Low</th>
+		<th scope="col" class="primera_fila">Close</th>
+		<th scope="col" class="primera_fila">Volume</th>
+        <th scope="col" class="primera_fila">AdjClose</th>       
+	</tr>
+	{% for l in registro %} 
+	<tr>
+		<td>{{l.fecha}}</td>
+		<td>{{l.open}}</td>
+		<td>{{l.high}}</td>
+		<td>{{l.low}}</td>
+		<td>{{l.close}}</td>
+		<td>{{l.volume}}</td>
+        <td>{{l.adjClose}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+{% endblock %}

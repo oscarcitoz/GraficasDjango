@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Archivos CSV {% endblock %}
+{% block js %}
+<script type="text/javascript" src="../../media/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="../../media/js/m.js"></script>
+{% endblock %}
+{% block css %}
+<link href="../../media/css/style1.css"  rel="stylesheet" type="text/css" />
+<link href="../../media/css/estilos.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block imagenCab %}
+<div id="cabecera">
+  <img src="../../media/images/djangopony2.png" />
+</div>
+{% endblock %}
+{% block content %}
+<div id="subtitulo"> ARCHIVOS CSV </div>
+<center>
+<br/>
+<h3>{{ informacion }}</h3>
+{% if registro|length > 0 %}
+<table width="500" border="1" align="center">
+  <tr>
+    <th scope="col" class="primera_fila">Nombre de archivo</th>
+    <th scope="col"class="primera_fila">Ver Gráfica de</th>
+     <th scope="col"class="primera_fila">&nbsp;</th>
+     <th scope="col"class="primera_fila">&nbsp;</th>
+     
+  </tr>
+   {% for l in registro %} 
+  <tr>
+    <td>{{l.nombre}}</td>
+    <td><a href="/tablasCsv/1d/{{l.archivo_id}}"> último Semana </a> | <a href="/tablasCsv/1m/{{l.archivo_id}}"> último mes </a> | <a href="/tablasCsv/6m/{{l.archivo_id}}"> últimos 6 meses </a> |  <a href="/tablasCsv/1a/{{l.archivo_id}}"> último Año </a> </td>
+    <td><a href="/vistaCsv/{{l.archivo_id}}"> Ver archivo </a></td>
+    <td><a href="/eliminarCsv/{{l.archivo_id}}"> Eliminar </a></td>
+    
+  </tr>
+  {% endfor %}
+</table>
+
+{% endif %}
+
+{% endblock %}

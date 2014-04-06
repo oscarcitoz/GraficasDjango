@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Ventana de inicio {% endblock %}
+
+{% block content %}
+<div id="inicio">
+<center>
+<div id="subtitulo">BIENVENIDO AL SISTEMA </div></center>
+<br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Esta aplicación consiste en elaborar una gráfica(proyección) con los datos que se encuentran en los archivos del sistema.</p>
+     	
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En el menú principal se muestran diferentes opciones, antes que nada debe cargar su archivo para poder visualizarlo en la aplicación, a continuación se presentan unos lineamientos para que tenga noción de como utilizar el sistema:</p>
+<pre><ol>
+<li>Solo se admiten 2 tipos de archivos: csv y txt.</li>
+<li>Asegurece antes de realizar cualquier operación haber copiado los archivos en la carpeta del servidor.</li>
+<li>Para que el archivo sea registrado debe hacer click en cargar,seleccionar el tipo y completar el formulario que se muestra.(Asegurece de ver la imagen que se encuentra en la sección cargar, ya que esta es un ejemplo de como debe ser la estructura del archivo).</li>
+<li>Si ocurre algun error inesperado el sistema se redireccionara automáticamente a una página en la cual se muestran los posibles errores.</li>
+<li>Ver: En esta opción se selecciona que tipo de archivos queremos ver, al elegir, se cargara una ventana con los archivos que se encuentran almacenados y se podrán realizar funciones tales como:
+<ul>
+<li>Ver el archivo: Se refleja en una tabla el archivo guardado.</li>
+<li>Realizar Gráfica: Se realiza la proyección con los datos del archivo seleccionado.</li>
+<li>Eliminar:Se borra de la base de datos el archivo seleccionado.</li>
+</ul>
+</li>
+</ol></pre>
+</div>
+
+{{informacion}}
+{% endblock %}
